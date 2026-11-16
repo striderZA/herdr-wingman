@@ -1,8 +1,8 @@
 <p align="center"><img src="https://img.shields.io/badge/Herdr%20Wingman-Mission%20control%20for%20Herdr-2ea44f?style=flat-square&labelColor=24292f" alt="Herdr Wingman | Mission control for Herdr" /></p>
 
-<h3 align="center">Run dozens of coding agents through one Coordinator without micromanaging each one or losing sight of what needs you</h3>
+<h3 align="center">One Coordinator, many agents, nothing you have to keep in your head</h3>
 
-<p align="center">Herdr Wingman is mission control for <a href="https://herdr.dev">Herdr</a>: one list of tasks, yours and the ones you delegate. You type what needs doing and the board's own agent, the Coordinator, turns it into tasks. Every delegated task runs as an ordinary Herdr agent in its own space and worktree, gets checked and reviewed by a second agent when it finishes, and waits for your yes before it merges. The board shows which tasks need you, which are ready to approve and which are still working.</p>
+<p align="center">Herdr Wingman is mission control for <a href="https://herdr.dev">Herdr</a>: one task list for the work you keep and the work you delegate. You type what needs doing and the board's Coordinator turns it into tasks. Each task runs as an ordinary Herdr agent in its own space and git worktree, is checked and reviewed by a second agent, and waits for your yes before it merges. The board shows what needs you, what is ready to approve, and what is still working.</p>
 
 <p align="center"><a href="https://github.com/striderZA/herdr-wingman/blob/master/assets/herdr-wingman-launch.mp4"><img src="assets/herdr-wingman-launch.webp" width="88%" alt="Animation: you tell the Coordinator what you want, it adds tasks that each get an agent on their own branch, and the board groups them as needs you, ready to approve, and working" /></a></p>
 
@@ -10,62 +10,40 @@
 
 <p align="center"><sub>✓&nbsp;Free,&nbsp;MIT&nbsp;licensed &nbsp; ✓&nbsp;Runs&nbsp;on&nbsp;your&nbsp;machine,&nbsp;no&nbsp;hosted&nbsp;service &nbsp; ✓&nbsp;Linux&nbsp;and&nbsp;Windows,&nbsp;Herdr&nbsp;0.9.3+&nbsp;(0.9.4+&nbsp;on&nbsp;Windows)</sub></p>
 
-<br />
+## What the board does
 
-## Keep one list going while the work happens in parallel
+The board is the overview and the remote control; Herdr is the engine.
 
-The board is an overview and a remote control; Herdr is the engine. Each delegated task gets its own agent in its own Herdr space, on its own branch in a git worktree, or in a plain folder when there's no repository. Your checkout is never touched. You approve finished work and answer the tasks that need you instead of briefing every agent yourself.
+- **One list, in the order that matters.** Tasks sit in five groups, `needs you`, `ready to approve`, `working`, `to do` and `done`, with a filter row that counts them. Each row names its agent, state, review round, pull request and time left. Herdr's sidebar carries the live rows too.
+- **Each task gets its own agent.** The Coordinator turns what you type into one task or several; every one starts on Claude Code, Codex, pi or [another agent Herdr supports](docs/agents.md), on its own branch in its own worktree, with the task and the board's rules. Your checkout is never touched.
+- **Nothing merges unseen.** A finish commits the work, merges main in, runs the repo's check, opens a draft pull request and has a second agent review it. A failed check or review goes back to the agent; passing work waits for your `Ctrl+L`. A small keeper does the same with the board closed.
 
-## Choose between briefing each agent by hand, one long agent session, a cloud projects product, or a work board in Herdr
+Want more control? Ask for [a plan first](docs/plan.md), [several attempts and one kept](docs/attempts.md), [limits](docs/limits.md) on time and tokens, or [automations](docs/automations.md) that add tasks on a schedule.
+
+## How it compares
 
 | | **Herdr Wingman** | Briefing agents by hand | One long agent session | Cloud projects products |
 |---|:---:|:---:|:---:|:---:|
-| **No extra software fee** | ✅ | ✅ | ✅ | ❌ |
 | **Parallel tasks on separate branches** | ✅ | ✅ | ❌ | ✅ |
 | **Same rules for every agent** | ✅ | ❌ | ✅ | ✅ |
 | **A second agent reviews every finished task** | ✅ | ❌ | ❌ | ❌ |
+| **Branches kept up to date with main** | ✅ | ❌ | ❌ | ❌ |
 | **Tasks grouped by what needs you** | ✅ | ❌ | ❌ | ✅ |
-| **Runs on your own machine** | ✅ | ✅ | ✅ | ❌ |
-| **Keeps every branch up to date with main** | ✅ | ❌ | ❌ | ❌ |
 | **Works with the agent CLI you already use** | ✅ | ✅ | ✅ | ❌ |
+| **Runs on your own machine** | ✅ | ✅ | ✅ | ❌ |
 | **Runs with no machine of yours switched on** | ❌ | ❌ | ❌ | ✅ |
-
-Keep your attention on decisions. Herdr Wingman starts, checks and tracks the tasks, your agents do the work, and you choose what to answer, approve, or merge.
-
-## Tell the Coordinator what you want. See which task needs you on the board.
-
-### 📈 See every task at a glance
-
-The board's list holds your tasks in five groups, in the order they need you: `needs you`, `ready to approve`, `working`, `to do` and `done`. Its filter row counts them (`Needs you 3   Working 2   Ready 1   To do 4   Done 15`), and each row says who is on it, where it stands, its review round and pull request, and a percent and time to go. Herdr's own sidebar carries a small copy of each live agent's row, so you see the same thing from any space.
-
-### ⚡ Stop briefing every agent yourself
-
-Type what needs doing and press `Enter`: the Coordinator, one long-lived agent chat, makes it a task or several. Each agent starts on Claude Code, Codex, pi or [another agent herdr supports](docs/agents.md), with the task and the board's rules, in a worktree of its own. Want more control? Ask for [a plan first](docs/plan.md), [several attempts and one kept](docs/attempts.md), [limits](docs/limits.md) on time and tokens, or [automations](docs/automations.md) that add tasks on a schedule.
-
-### 💬 Know when a task needs an answer
-
-An agent that asks you something, wants a permission or a sign-in says so to the board, so its task shows under `needs you` and stays there until you answer. An agent that finishes goes down the finish line: its work is committed, main is merged in, the repo's check runs, a draft pull request opens, and a second agent reviews it. A failed check or review goes straight back to the agent; work that passes waits for your `Ctrl+L`. With the board closed, a small keeper does the same.
 
 ## Open the board in three steps
 
 <table>
 <tr>
-<td align="center" valign="top" width="33%"><h3>1️⃣</h3><b>Install the plugin</b><br /><sub>Run <code>herdr plugin install striderZA/herdr-wingman</code>. It downloads the one program for your platform: no Node, no npm.</sub></td>
-<td align="center" valign="top" width="33%"><h3>2️⃣</h3><b>Open the board</b><br /><sub>Run the plugin's action "Open the work board", or <code>herdr plugin action invoke open --plugin herdr-wingman</code> (<code>open-windows</code> on Windows) in a Herdr pane. Its first screen offers a key that opens it from anywhere in Herdr.</sub></td>
-<td align="center" valign="top" width="33%"><h3>3️⃣</h3><b>Type what needs doing</b><br /><sub>Press <code>Enter</code> and the Coordinator makes it a task. <code>Ctrl+S</code> puts an agent on the task you select. <code>?</code> shows everything else you can do.</sub></td>
+<td align="center" valign="top" width="33%"><h3>1️⃣</h3><b>Install the plugin</b><br /><sub>Run <code>herdr plugin install striderZA/herdr-wingman</code>. It downloads one program for your platform: no Node, no npm.</sub></td>
+<td align="center" valign="top" width="33%"><h3>2️⃣</h3><b>Open the board</b><br /><sub>Run the plugin's action "Open the work board", or <code>herdr plugin action invoke open --plugin herdr-wingman</code> (<code>open-windows</code> on Windows). Its first screen offers a key that opens it from anywhere in Herdr.</sub></td>
+<td align="center" valign="top" width="33%"><h3>3️⃣</h3><b>Type what needs doing</b><br /><sub><code>Enter</code> has the Coordinator make it a task, <code>Ctrl+S</code> puts an agent on the one you select, and <code>?</code> shows everything else.</sub></td>
 </tr>
 </table>
 
-## Get everything included, free
-
-<table align="center">
-<tr>
-<td align="center" valign="top"><sub>For developers who run coding agents in Herdr on Linux or Windows</sub><br /><h2>Free</h2><div align="left">&nbsp;&nbsp;&nbsp;✓&nbsp; A Coordinator that turns what you type into tasks<br />&nbsp;&nbsp;&nbsp;✓&nbsp; Every task on its own worktree and branch, in its own Herdr space<br />&nbsp;&nbsp;&nbsp;✓&nbsp; A check and a second agent's review before anything merges<br />&nbsp;&nbsp;&nbsp;✓&nbsp; What needs you, on the board, in Herdr's sidebar and on your phone<br />&nbsp;&nbsp;&nbsp;✓&nbsp; Branches kept up to date with main, cleanup after a merge<br />&nbsp;&nbsp;&nbsp;✓&nbsp; Plans, attempts, limits, fallback agents and automations</div></td>
-</tr>
-<tr>
-<td align="center"><a href="https://github.com/striderZA/herdr-wingman/blob/master/docs/get-started.md"><img src="assets/buttons/install-herdr-wingman.svg" alt="Install herdr-wingman" /></a></td>
-</tr>
-</table>
+[Getting started](docs/get-started.md) has the same steps with the details; [installing](docs/install.md) covers prerequisites, building from source and uninstalling.
 
 ## Updating
 
@@ -74,70 +52,27 @@ herdr-wingman update           # put the newest release in place of the program
 herdr-wingman update 1.2.0     # a given version
 ```
 
-An open board and the keeper see the new program and load it by themselves, once nothing is half typed and no agent is held up. Pulling a newer plugin with `git pull` does the same at the next command Herdr runs. A program you built yourself is updated with `git pull` and `cargo build --release`, never by a download. [Installing](docs/install.md) has the details.
+An open board and the keeper load the new program by themselves, once nothing is half typed and no agent is held up. A program you built yourself is updated with `git pull` and `cargo build --release`.
 
-## Get your questions answered
+## Questions
 
-### Do I need to know how to code?
+**Do I need to know how to code?** You need a terminal. Everything changes by asking the Coordinator or from the settings page (`Ctrl+E`); you never edit the program's files. You need Linux or Windows, Herdr 0.9.3+ (0.9.4+ on Windows), git, `curl` or `wget`, and an agent CLI. `gh` is optional; Rust only if you build it yourself. [Installing](docs/install.md) lists it all.
 
-You need to be comfortable in a terminal. The plugin downloads one prebuilt program for your platform, and you never have to edit its files: everything changes by asking the Coordinator or from the board's settings page (`Ctrl+E`). You'll need Linux or Windows, Herdr 0.9.3 or newer (0.9.4 on Windows), Git, `curl` or `wget`, and an agent CLI the board can start: Claude Code, Codex, pi or another agent herdr supports. `gh` (pull requests) is optional. Rust/Cargo is needed only when you build it yourself. [Installing](docs/install.md) covers the prerequisites.
+**What permissions do the agents get?** Full access by default, so a task never waits on a prompt nobody sees: `claude --dangerously-skip-permissions`, `codex --dangerously-bypass-approvals-and-sandbox`. They can do anything you can; the rules and the review are guidance, not a sandbox. Set `worker.access ask` (and `reviewer.access`, `coordinator.access`) to be asked first. Your own agent settings and hooks are untouched.
 
-### How do I check that Herdr Wingman is running?
+**Will it touch my branches or my checkout?** Only what it made. Each task has a worktree and a branch named from its title (`feat/12-add-a-greeting`; `workspace.branch` changes the pattern). The board merges main into those branches, rolls a real conflict back to the task's agent, and merges only on your yes, at the commit that was reviewed. Finished tasks are cleaned up; unsaved or unmerged work stays on disk. [How work gets done](docs/how-work-gets-done.md) has the details.
 
-Run:
+**Does it send my work to a hosted service?** No. The board keeps its files in `~/.herdr-wingman/` on your machine and talks to your local Herdr. Your agent CLI still uses its own service as usual. [The home folder](docs/home-folder.md) lists every file.
 
-```bash
-herdr-wingman doctor
-```
+**Is that enough safety?** The guards are soft: nothing merges without your yes, a failed review can't be merged by a plain yes, and a repo's own file can't switch off the review. Agents still have a shell. Turn on `worker.access ask`, [a plan first](docs/plan.md) and [limits](docs/limits.md) for more.
 
-It checks the program and its launcher, the plugin in Herdr, your agent programs (installed, and signed in where the program can say) and their model and effort settings, free disk space, and leftover worktrees it could clean. Each problem comes with what to do, and it exits non-zero when there is one. [Troubleshooting](docs/troubleshooting.md#the-health-check) lists every check. [Installing](docs/install.md) walks through the first run, the blocks the board can add to Herdr's config, and taking the plugin out again.
-
-### What permissions do the agents get?
-
-**Full access by default**, so a task never waits on a prompt nobody sees: `claude --dangerously-skip-permissions`, `codex --dangerously-bypass-approvals-and-sandbox`. They can run anything as you without asking; the rules and the review are guidance, not a sandbox. Set `worker.access ask` (and `reviewer.access`, `coordinator.access`) to start a program without those flags, so it asks before it acts. Nothing is written to your own agent settings, and your own hooks keep running. [How work gets done](docs/how-work-gets-done.md) has the details.
-
-### Does the plugin send my work to a hosted service?
-
-No. The board keeps its files in a folder on your machine and talks to your local Herdr session. Reports and review evidence stay as files in the task's folder, and the board shows their paths. Your agent CLI still uses its own service as usual.
-
-### Will it touch my branches or worktrees on its own?
-
-Only the ones it made. Every task works in its own worktree, on its own branch, named from its title (`feat/12-add-a-greeting`; the setting `workspace.branch` changes the pattern), never in your checkout. The board merges main into those branches so the reviewer sees the work as it will really land, and rolls a real conflict back at once and hands it to the task's agent. It merges only on your yes, at the commit that was reviewed, unless you set `merge.by itself`. When a task is done its worktree and branch are removed; a checkout with unsaved or unmerged work stays on disk with its branch. `workspace.cleanup false` keeps everything.
-
-### Where do my tasks live?
-
-In `~/.herdr-wingman/` by default: `settings/config.json` for your settings, `data/tasks/<repo>/<n>/` for each task with its closing note and review evidence, `data/coordinator/` for the Coordinator's chat, `data/automations/` for your automations, and `reports/` for reports an agent made for you that belong in no repo. A repo can hold its own `.herdr-wingman.json` with its setup, its check command and a few other facts, but never a setting that loosens a guard. [The home folder](docs/home-folder.md) lists every file.
-
-### Can I have several boards at once?
-
-You don't need to: one board holds every repo, each task tagged with its repo, and `Alt+S` groups them. Each herdr session gets its own Coordinator, but they share the one list. The board key never opens a second board: it goes to the one that runs. [Several boards](docs/several-boards.md) has the details.
-
-### Do I have to start every task through the Coordinator?
-
-No. Select a task on the board and press `Ctrl+S` to put an agent on it, or run `herdr-wingman add "<title>" --delegate` and `herdr-wingman delegate <id>` yourself. An [automation](docs/automations.md) adds tasks on a schedule or when something happens on the board, such as a merge.
-
-### What if the safety settings aren't enough?
-
-They are soft. By default nothing merges without your yes, work whose review failed is never merged by a plain yes, and a repo's own file can't switch on merging by itself, drop the review or change the rules its own branch is checked by. But agents run with full access and have a shell: one can do anything you can, a review is a second agent's judgement and not a proof, and an automation runs with nobody watching. Turn on `worker.access ask` for prompts, a [plan first](docs/plan.md) for a yes before any change, and [limits](docs/limits.md) for a cap on time and tokens.
-
-### What does it cost?
-
-Herdr Wingman is free and [MIT licensed](LICENSE). Your agent CLI's usual usage charges still apply: every task is a full agent session plus a review, and the Coordinator spends tokens on each message.
+**What does it cost?** Nothing: Herdr Wingman is free and [MIT licensed](LICENSE). Your agent CLI's usage charges apply as usual, one session per task plus a review. `herdr-wingman doctor` checks the install, your agents and their access, and says what to do about each problem.
 
 ## Why this fork
 
-Herdr Wingman is a fork of [Shepherdr](https://github.com/eliasstravik/shepherdr) by Elias Stravik, and like it is MIT licensed. In late October 2026 Shepherdr replaced the project this fork starts from, and grew into a Herdr app with a web app, voice calls, Autopilot, add-ons and sync between machines. That suits the people it was made for. This fork keeps the task board, focused on one machine.
+Herdr Wingman is a fork of [Shepherdr](https://github.com/eliasstravik/shepherdr) by Elias Stravik, and like it MIT licensed. Shepherdr grew into a Herdr app with a web board, voice calls, Autopilot and sync between machines. This fork keeps the task board, for one machine:
 
-- **One job, done well.** One list of tasks on one machine, each task an agent in its own worktree, a check and a review before anything merges, and your yes. The web board, voice calls and remote-machine support are removed.
-- **Linux and Windows.** The Shepherdr README names macOS and Linux as its platforms. This fork runs on Linux and Windows, and its checks run on both. macOS is not supported here because there is no Mac to build and test on.
-- **Your workflow, your settings.** The defaults keep the safe path: each task on its own branch, a check and a review before anything merges, and your yes. Most of the rest is a setting: how many attempts a task gets and who picks the winner, whether merges happen by themselves, how branches are named, and whether finished work is cleaned up. [Settings](docs/settings.md) lists them all.
+- **One job, done well.** One list on one machine, an agent per task in its own worktree, a check and a review before anything merges, and your yes.
+- **Linux and Windows.** Both are built and tested here. macOS is unsupported: there is no Mac to test on.
 
 Thanks to Elias Stravik for the board this fork is built on.
-
-## Start with one install
-
-<p align="center">Your board starts with an install, one key, and one sentence about what needs doing. Herdr Wingman starts the agents, checks their work and keeps it in view. You choose what to answer and what to merge.</p>
-
-<p align="center"><a href="https://github.com/striderZA/herdr-wingman/blob/master/docs/get-started.md"><img src="assets/buttons/install-herdr-wingman.svg" alt="Install herdr-wingman" /></a></p>
-
-<p align="center"><sub>✓&nbsp;Free,&nbsp;MIT&nbsp;licensed &nbsp; ✓&nbsp;Runs&nbsp;on&nbsp;your&nbsp;machine,&nbsp;no&nbsp;hosted&nbsp;service &nbsp; ✓&nbsp;Linux&nbsp;and&nbsp;Windows,&nbsp;Herdr&nbsp;0.9.3+&nbsp;(0.9.4+&nbsp;on&nbsp;Windows)</sub></p>
