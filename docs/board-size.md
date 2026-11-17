@@ -77,7 +77,7 @@ the board taking its terminal 179 times in twelve minutes, every four seconds, w
 Now it takes the terminal twice. If the sizes are still apart, it stops, and says what gives the size back:
 
 ```
- ! Held at 54×24: a key typed in this window frees it. Another herdr window on this session (a second device, a browser tab) has it at its own size, so herdr's own window (142×47) shows the board cut off or half empty
+ Shown cut off: another herdr window on this session (a second device, a browser tab) holds this pane at 54×24 (herdr's own window: 142×47). A key typed in this window frees it.
 ```
 
 It tries again the next time the sizes come apart after having agreed. The board keeping the size of its own pane is
