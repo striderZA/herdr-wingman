@@ -20,7 +20,7 @@ No Node, no npm: the board is one program.
 ## What the install does
 
 `herdr plugin install striderZA/herdr-wingman` installs the plugin from GitHub and runs its build step, which downloads
-the program. `herdr plugin list` shows its source as `github:striderZA/herdr-wingman@<ref>`. `--ref v1.2.32` takes a given release.
+the program. `herdr plugin list` shows its source as `github:striderZA/herdr-wingman@<ref>`. `--ref v1.0.0` takes a given release.
 
 To keep a checkout of your own instead:
 
@@ -116,7 +116,7 @@ Agents and hooks are handed the launcher `~/.herdr-wingman/data/bin/herdr-wingma
 
 ```sh
 herdr-wingman update           # the newest release
-herdr-wingman update 0.3.1     # a given version
+herdr-wingman update 1.0.0     # a given version
 ```
 
 - It puts the release in place of the downloaded program, in one step.
@@ -156,7 +156,7 @@ what takes the marked blocks out of `config.toml` and removes the how-to files (
 
 ## Windows
 
-Windows is supported: the plugin's manifest lists it, and every release since 1.2.28 ships a Windows file. [windows.md](windows.md) says what differs there. You need:
+Windows is supported: the plugin's manifest lists it, and every release ships a Windows file. [windows.md](windows.md) says what differs there. You need:
 
 - Windows on x86_64.
 - Herdr 0.9.4 or newer, running. The board checks herdr's version when it starts and refuses an older one on Windows, naming the version it needs.

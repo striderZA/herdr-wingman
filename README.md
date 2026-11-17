@@ -49,7 +49,7 @@ Want more control? Ask for [a plan first](docs/plan.md), [several attempts and o
 
 ```bash
 herdr-wingman update           # put the newest release in place of the program
-herdr-wingman update 1.2.0     # a given version
+herdr-wingman update 1.0.0     # a given version
 ```
 
 An open board and the keeper load the new program by themselves, once nothing is half typed and no agent is held up. A program you built yourself is updated with `git pull` and `cargo build --release`.

@@ -2,7 +2,7 @@
 
 **You do not need this page to use the board.** It is the lab notebook behind it: each row is one thing about Herdr
 (or an agent program running in Herdr) that the board relies on, and what a real test on Herdr 0.9.3 showed. Other
-pages link here for the proof. Look a fact up by the words in its first column. Rows written before version 2.0.0
+pages link here for the proof. Look a fact up by the words in its first column. Rows written before version 1.0.0
 say the program's name then (see [coming from an older version](install.md#coming-from-an-older-version)).
 
 The last section, [missing in Herdr](#missing-in-herdr), lists what Herdr would need for the board's popup to work like
