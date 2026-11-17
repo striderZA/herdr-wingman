@@ -4,7 +4,7 @@
 
 <p align="center">Herdr Wingman is mission control for <a href="https://herdr.dev">Herdr</a>: one task list for the work you keep and the work you delegate. You type what needs doing and the board's Coordinator turns it into tasks. Each task runs as an ordinary Herdr agent in its own space and git worktree, is checked and reviewed by a second agent, and waits for your yes before it merges. The board shows what needs you, what is ready to approve, and what is still working.</p>
 
-<p align="center"><a href="https://github.com/striderZA/herdr-wingman/blob/master/assets/herdr-wingman-launch.mp4"><img src="assets/herdr-wingman-launch.webp" width="88%" alt="Animation: you tell the Coordinator what you want, it adds tasks that each get an agent on their own branch, and the board groups them as needs you, ready to approve, and working" /></a></p>
+<p align="center"><img src="assets/herdr-wingman-launch.gif" width="88%" alt="Animation: you tell the Coordinator what you want, it adds tasks that each get an agent on their own branch, and the board groups them as needs you, ready to approve, and working" /></p>
 
 <p align="center"><a href="https://github.com/striderZA/herdr-wingman/blob/master/docs/get-started.md"><img src="assets/buttons/install-herdr-wingman.svg" alt="Install herdr-wingman" /></a></p>
 
