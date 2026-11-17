@@ -57,7 +57,7 @@ the same. It is for when the human said so in so many words.
 
 ### A flag a command does not know is refused
 
-Each command takes only its own flags, plus `--json` and `--help`. `add`, `delegate` and `automations` also take any
+Each command takes only its own flags, plus `--json` and `--help`. `add`, `delegate` and `automations add` also take any
 work setting by its name. Anything else stops the command before it does anything, and names the nearest right flag:
 
 ```

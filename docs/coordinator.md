@@ -106,7 +106,8 @@ same file), and when you start the program in that folder by hand.
 | Claude Code | `CLAUDE.md` (2.1.296 also reads an `AGENTS.md` beside it) | `AGENTS.md`, and a `CLAUDE.md` that only passes on to it (`@AGENTS.md`): the rules arrive once |
 | Codex | `AGENTS.md` | `AGENTS.md` |
 | pi | `AGENTS.md` | `AGENTS.md` |
-| any other kind | not known | `AGENTS.md`, and one line before its first message that points at the file |
+| another kind with a rules file (`copilot`, `cursor`, `droid`, `hermes`, `kilo`, `kimi`, `omp`, `opencode`: `AGENTS.md`; `qwen`: `QWEN.md`) | it | `AGENTS.md`, and the program's own importing file when it has one (`@AGENTS.md`) |
+| `agy`, `devin`, `grok`, `letta`, `mastracode` | not known | `AGENTS.md`, and one line before its first message that points at the file |
 
 - **Kept up to date.** The files are written again at every start and before every message. So a new version's rules
   are in place under a running Coordinator, which reads them at its next new chat or restart.
@@ -121,7 +122,7 @@ same file), and when you start the program in that folder by hand.
   pi's appended system prompt, Codex's `developer_instructions`). A file works the same for every kind and outlives the
   program. A flag is gone with the process, must be passed again by whoever starts the program, and Codex's could not
   carry this much text on one launch line. With the file in place, a flag would say the same thing twice. Only a kind
-  the board does not know, which may or may not read `AGENTS.md`, also gets the pointing line.
+  the board does not know (`agy`, `devin`, `grok`, `letta`, `mastracode`), which may or may not read `AGENTS.md`, also gets the pointing line.
 - **Working agents and reviewers are different.** They work in your repo, whose `AGENTS.md` is yours, so their rules
   still ride on their launch.
 

@@ -175,7 +175,7 @@ list behind a key any more: `Alt+O` goes into the selected row's agent, not into
   - its name where the titles start, and its trigger in plain words after it (`every 2h`,
     `when a task is merged, in every repo`), then its repo where that is not the one the board shows (grouped by repo,
     the heading says it);
-  - the task its last firing made, by that task's own mark and number (`✓ HSW-4`);
+  - the last task it made, by that task's own mark and number (`✓ HSW-4`);
   - in the list's time column: `next in 4m` for a schedule that is on, else `fired 2h ago` (`skipped 2h ago` when the
     last firing made no task), else `never fired`.
 

@@ -55,7 +55,7 @@ what it removed (`herdr-wingman sweep --dry` only says what would go). What stil
 
 - the temporary folders of done and archived tasks whose agent is gone (or open and quiet for an hour, as above);
 - the folders an agent's program kept for a worktree of the board's that is gone;
-- the board's task folders whose task was removed;
+- a task's temporary folder whose task is gone;
 - the build output (`target/`, `node_modules/`, `.next/`, and only what git ignores) of a worktree a done or archived
   task kept, once nothing changed on the task for `board.oldBuilds` days (7; `0`: never);
 - old warm builds in `~/.cache/herdr-wingman` that nothing uses.

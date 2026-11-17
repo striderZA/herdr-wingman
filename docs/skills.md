@@ -26,7 +26,7 @@ skills and commands of whoever the chat talks to, with what each does. Pick one 
 - **`Enter` on a word that already is the picked one** (`/ship`, typed whole) sends it at once.
 - **`Esc`** closes the list and keeps what you typed. Change the word and it lists again. A second `Esc` puts the draft
   away, as always.
-- The list is only for a message that starts with `/` and is still one word. A `/` further on (`look at /tmp`) lists
+- The list is only for a message that starts with `/` (for Codex, `/` or `$`) and is still one word. A `/` further on (`look at /tmp`) lists
   nothing.
 
 What you send goes to the agent word for word, so `/review-pr the login branch` reaches it as you typed it. A skill or

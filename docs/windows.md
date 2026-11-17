@@ -7,7 +7,7 @@ same functions on both.
 
 ## Status
 
-Windows is on master. The plugin's manifest lists it (`herdr-plugin.toml`), and every release since 1.2.28 ships a Windows file. Points not yet checked on a live Windows machine say so where they come up below. [install.md](install.md) says what Windows needs.
+Windows is on master. The plugin's manifest lists it (`herdr-plugin.toml`), and every release ships a Windows file. Points not yet checked on a live Windows machine say so where they come up below. [install.md](install.md) says what Windows needs.
 
 ## What differs
 
@@ -27,11 +27,12 @@ Windows is on master. The plugin's manifest lists it (`herdr-plugin.toml`), and 
   the launcher's download) moves the running copy aside, `<name>.<pid>.old`, and puts the new one in its place. A copy
   moved aside is removed by a later replacement, once no program runs from it.
 - **Replacing a file another program has open** without delete sharing (an editor or a scanner may; Rust's own reads do not
-  block it): the write retries for up to a second, then leaves the old file as it was and reports the failure. The new file is kept, so the write can be tried again.
+  block it): the write retries for up to a second, then leaves the old file as it was and reports the failure. Write it again to retry.
 - **Locks** use `LockFileEx` on the lock file.
 - **Links**: the program makes no links on Windows. The one-time move into the home folder is not made here, so the
-  folders stay where they are. Links need Developer Mode or an administrator (error 1314); the tests that make links
-  are gated on Windows until then.
+  folders stay where they are. The rename still tries a best-effort link from the old folder to the new one, which
+  fails without Developer Mode or an administrator (error 1314). Links need Developer Mode or an administrator; the
+  tests that make links are gated on Windows until then.
 - **Held panes**: Windows has no process table of terminals, so the board cannot tell which views hold a pane. That check
   is off, and a held pane is not reported.
 - **Background jobs**: a job starts in its own process group, not in a console of its own. Whether it keeps running when

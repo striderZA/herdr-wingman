@@ -91,8 +91,9 @@ Herdr's default sidebar shows a space's name, the tab's name and the agent's sho
 | Row 3 | `8% 16m` | not shown: Herdr's default rows show no custom value |
 | A space | its name, its branch, the percent and time to go | its name and its branch |
 
-The plugin's rows hide the names of a task's own tabs (`Agent`, `Reviewer #1`): they say nothing the next row does not.
-A tab of your own named exactly `Agent` is hidden on row 1 too. An agent that is not the board's keeps Herdr's own
+The plugin's rows hide the names of a task's own tabs `Agent` and `Reviewer #…`: they say nothing the next row does not.
+A tab of your own named exactly `Agent` is hidden on row 1 too. A task's attempt tabs (`Agent A`, `Picker`) are not
+hidden. An agent that is not the board's keeps Herdr's own
 entry: its space, its tab, its name.
 
 ## What is Herdr's own

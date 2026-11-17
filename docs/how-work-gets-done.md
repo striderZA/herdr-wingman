@@ -412,7 +412,8 @@ requests, starts queued tasks, and keeps Herdr's sidebar current.
   (`8% 16m`). The pane's title names the task the same way, so Herdr's sidebar reads the same. A running review has
   two entries, the agent's and the reviewer's: they are two agents. The sidebar shows only tasks with a live agent pane;
   the others (queued, your own) are on the board only.
-- **No notifications.** It raises no pop-up or sound: what needs you is on the board and in Herdr's sidebar.
+- **No pop-up or sound of its own.** What needs you is on the board and in Herdr's sidebar (`bell` rings only where a
+  board is open); a `board.notify` command still runs once per event, board open or closed.
 - **Its life.** Herdr starts it with its server. Any Herdr event, or opening the board, starts it again if it died. It
   replaces itself when the plugin is updated, and exits when Herdr is gone. It looks after this machine's tasks only.
 - An open board does the same. After an update it loads the new version by itself, in place, once nothing is half typed.
