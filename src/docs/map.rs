@@ -13,7 +13,7 @@ fn tracked(dirs: &[&str]) -> Result<Vec<String>, String> {
 }
 /// The files the map is made of: the program's code, its page, its scripts, its release.
 pub fn sources() -> Result<Vec<String>, String> {
-    Ok(tracked(&["src", "crates", "bin", "scripts", "tests", ".github"])?.into_iter().filter(|f| [".rs", ".sh", ".js", ".css", ".yml"].iter().any(|e| f.ends_with(e))).collect())
+    Ok(tracked(&["src", "crates", "bin", "scripts", "tests", ".github"])?.into_iter().filter(|f| [".rs", ".sh", ".ps1", ".js", ".css", ".yml"].iter().any(|e| f.ends_with(e))).collect())
 }
 /// What a file holds: the first sentence of the comment at its top.
 pub fn holds(file: &str) -> Result<String, String> {
