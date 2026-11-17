@@ -26,7 +26,7 @@ wheel must not send your answer to another agent. The next key brings the view b
 
 - **A click on a task's row selects it**, like `↑` and `↓`. On the selected row it does nothing more.
 - **A click on a heading folds it**, or unfolds it, like `Enter` on it ([list headings](list-headings.md)).
-- With words in the box, a click selects nothing and the board says why: `Send or put away what you typed first`.
+- With words in the box, a click selects nothing and the board says why: `Send or put away what you typed first: a click does not change who gets it.`
 - **A click on the filter row** shows that filter ([the board](board.md#the-filter-row)).
 - A click anywhere else (the header, the chat, the task panel) does nothing.
 

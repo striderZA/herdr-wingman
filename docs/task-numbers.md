@@ -61,14 +61,14 @@ never changes.
 | the task panel and the details page | the tag before the title, greyed; the heading says `Task details  HSW-134 "its title"`. The id itself (`herdr-wingman/134`) stands once, on the whole task, as `Task id` with the session: where a command needs it |
 | the chat's line that names who you talk to | the tag between the mark and the task's name; a window too narrow to leave the status 20 cells goes without it |
 | an automation's firings | `made HSW-140`, on the board and on the command line |
-| the board's own messages | the tag and the title, in one form: `Archived HSW-134 "Fix the footer".`, `Pinned HSW-14 "…" to the top.`, `Stopped HSW-14 "…".`, `Removed …`. A message an action wrote with the id reads with the tag too (`HSW-14: approved, merging`). Only a line that shows a command to run keeps the id the command takes. Pinning says so, never a bare `…` |
+| the board's own messages | the tag and the title, in one form: `Archived HSW-134 "Fix the footer".`, `Pinned HSW-14 "…". ctrl+p unpins it.`, `Stopped HSW-14 "…".`, `Removed …`. A message an action wrote with the id reads with the tag too (`HSW-14: approved, merging`). Only a line that shows a command to run keeps the id the command takes. Pinning says so, never a bare `…` |
 | Herdr's sidebar, and a pane's title | the task's space is named with the tag and the task's title (`HSW-34 Add a file…`), which is the first row of its agent's entry ([Herdr's sidebar](sidebar.md)). The pane's title is the same. A reviewer's pane is named the same way |
 
 ### The key beside a repo's name
 
 Where the board names a repo, its key stands beside the name, dimmed: `gtm-agent · AGT`. That is:
 
-- the board's top line, which names the repo new tasks go to (`herdr-wingman  gtm-agent · AGT · 3 to do`);
+- the board's top line, which names the repo new tasks go to (`herdr-wingman  gtm-agent · AGT`);
 - a repo's heading in the list grouped by repo;
 - the `Task id` row of the whole task (`gtm-agent/12 · AGT`), and an automation's `Repo` row.
 

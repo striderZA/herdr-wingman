@@ -102,7 +102,7 @@ lists every key; the hint line is not a list.
   a message to show or hide. `ctrl+x` says what it would do here: `stop the agent`, `remove this task`, or, on a task you
   marked as your own work, `put it back in to do`.
 - **What the screen already says is not said again.** The text box's own grey words say who gets your message
-  (`Send message to Agent`, `Send message to Coordinator`), so the line does not.
+  (`Send message to the agent`, `Send message to the coordinator`), so the line does not.
 - **While you type**, it says where `Enter` sends your words, and names the task by its tag, since the words are locked to
   it while the list may show others: `enter send to the Coordinator`,
   `enter send to HSW-34's agent`, `enter send, and start an agent on HSW-34`, `enter add it as a task`. The text box's edge
@@ -118,7 +118,7 @@ What it shows, for example:
 | Ready to approve | `ctrl+l approve and merge this task · ctrl+r send the review to the agent · space talk to the agent · ? all keys` |
 | Something went wrong | `ctrl+r tell this task's agent to fix it · ctrl+l retry as it is · space talk to the agent · ? all keys` |
 | Stopped without a summary | `ctrl+r tell this task's agent to continue · ctrl+l use its work as it is · enter open the agent · ? all keys` |
-| Talking to a task's agent | `enter open this task's agent · ctrl+x stop the agent · space back to the Coordinator` |
+| Talking to a task's agent | `enter open this task's agent · ctrl+x stop the agent · space back to Jaco-Desktop's coordinator` |
 | Typing to the Coordinator | `enter send to the Coordinator · shift+enter new line · esc put away` |
 | The whole task | `… · ↑↓ scroll the task · esc back to the list` |
 | The archive | `ctrl+a restore this task · ctrl+x remove this task · esc back to the board · ? all keys` |
@@ -133,7 +133,7 @@ What it shows, for example:
 - Between them, `alt+c hide the latest message` goes first, then the others from the last back. `alt+c show the latest message` outlasts those, because it is how you see a reply.
 - While you type, `shift+enter new line` goes first and `esc put away` stays.
 - With room for only one hint, it is the main thing, except while you talk to a task's agent: there
-  `space back to the Coordinator` stays, the one way back.
+  `space back to Jaco-Desktop's coordinator` stays, the one way back.
 - Too narrow even for that one hint, it is said shorter, not cut: `enter send to HSW-34`, `ctrl+l merge this task`,
   `its agent` for `this task's agent`. That holds down to about 34 columns. A draft's hint keeps naming who gets the words
   as long as that fits (`enter send to HSW-34`, `enter send to the Coordinator`, `enter send to vm-a`); only narrower is

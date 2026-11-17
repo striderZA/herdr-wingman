@@ -190,5 +190,5 @@ your words are in the base colour you type in, theirs grey.
 - The lit step of the ladder is in the same colour, reversed. It is the same wherever there is such a box: under the
   list, in the reply view, under the task panel and full screen, and in the popup.
 - **Colour is never the only clue.** The ladder names who it is (`vm-str › gtm`, `gtm › GTM-14`), the grey words in the
-  empty box say who gets it (`Send message to gtm's coordinator`, `your message starts an agent on it`), and while you
+  empty box say who gets it (`Send message to the project coordinator`, `your message starts an agent on it`), and while you
   type the hint line does (`enter send to HSW-34's agent`). With `NO_COLOR` the board draws no colour at all.
