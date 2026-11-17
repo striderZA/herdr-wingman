@@ -22,7 +22,7 @@ agent.
 ╭─  Jaco-Desktop  ─────────────────────────────────────────────────────────────────────────────────╮
 │ Added proj/4: Add an undo. An agent is on it.                                              │
 │                                                                                            │
-│ ❯ Send message to the gtm coordinator                                                      │
+│ ❯ Send message to the project coordinator                                                  │
 ╰────────────────────────────────────────────────────────────────────────────────────────────╯
   alt+c hide the latest message · ? all keys
 ```
@@ -54,7 +54,7 @@ others are greyed, a count of tasks that need you in red.
 | Filter | The list shows |
 |---|---|
 | `All` | every task in its group and the automations, as always |
-| `Coordinators` | only the coordinators that run (started and not stopped: working, idle, needs you; or failed, so you can fix it): each such project's row ([project coordinators](project-coordinators.md)). A stopped or never started one is not there, nor in the count; its row stays in the other filters, with no mark. The Coordinator is the top row |
+| `Coordinators` | only the coordinators that run (started and not stopped: working, idle, needs you; or failed, so you can fix it): each such project's row ([project coordinators](project-coordinators.md)). A stopped or never started one is not there, nor in the count; its row stays in the other filters, with no mark. The top row is always there, counted only while it runs |
 | `Needs you`, `Working`, `Ready`, `To do` | only the tasks of that group (`Ready` is ready to approve) |
 | `Done` | every done task, which the other filters hide |
 | `Automations` | only the automations' rows, in their places |
@@ -576,7 +576,7 @@ one was skipped, the hour a schedule is next due, and how many times it fired (o
 - **The arrows only move the selection**; they never change who you talk to. While you talk to a task's agent, the chat
   follows the selection: move to another task and you talk to that task's agent, with its latest message shown.
 - **A task with no agent to talk to** is still named, with where your message goes instead: it starts an agent on a task
-  that is to do; it goes to the Coordinator about that task otherwise (`no agent on it: your message goes to the Coordinator, about this task`). An archived task is read-only.
+  that is to do; it goes to the Coordinator about that task otherwise (`no agent on it: your message goes to Jaco-Desktop's coordinator, about this task`). An archived task is read-only.
 - **With no task selected** (an empty list), the chat names the Coordinator until a task is selected again.
 - **If the task you talk to goes away** (removed), you are back with the top row's coordinator, never on a neighbour's agent.
 - **On a project's row**, `Space` talks to that project's own coordinator
@@ -591,7 +591,7 @@ It looks the same for a coordinator and for a task's agent, at every window widt
 ╭─ Jaco-Desktop ›  gtm  ────────────────────────────────────────────────── alt+k more ↑ ─╮
 │ Added proj/4: Add an undo. An agent is on it.                                              │
 │                                                                                            │
-│ ❯ Send message to the gtm coordinator                                                      │
+│ ❯ Send message to the project coordinator                                                  │
 ╰────────────────────────────────────────────────────────────────────────────────────────────╯
   alt+c hide the latest message · ? all keys
 ```
@@ -611,7 +611,7 @@ It looks the same for a coordinator and for a task's agent, at every window widt
    - A picture you paste stands on it as `[Image 1]`, not as its path; what is sent has the path
      ([pictures pasted](image-paste.md)).
    - While that line is empty, it says in grey who gets your message, by the name of their tab:
-     `Send message to Coordinator`, or `Send message to Agent`. Nothing else is in it.
+     `Send message to the coordinator`, or `Send message to the agent`. Nothing else is in it.
    - The box's frame and its `❯` say it by colour too: the plain text colour for the Coordinator, the task's status
      colour for its agent ([colours](colours.md)).
    - **It grows with a long message**, up to two thirds of the window, and shrinks back for a short one. The list above
@@ -655,7 +655,7 @@ goes, for every program a reviewer can be. Before it has said anything: `The rev
 A reviewer takes no messages (it judges the work as it is), so what you type still goes to the task's agent. The review
 goes on while you chat, as it does when you type in the agent's own pane, and stops only when the agent changes the code
 ([chatting with a finished task](how-work-gets-done.md#chatting-with-a-finished-task-re-reviews-only-what-changed)). The
-empty line says both: `Send message to Agent: the review goes on unless the code changes`. When the review ends, the chat
+empty line says both: `Send message to the agent: the review goes on unless the code changes`. When the review ends, the chat
 is the agent's again, and the review's result is where it always is: on the row and in the task panel.
 
 ### The box holds one message: the newest, whoever said it
@@ -678,7 +678,7 @@ as long as the board stays open.
 │ Agent:                                                                                     │
 │ Made g.                                                                                    │
 │                                                                                            │
-│ ❯ Send message to Agent                                                                    │
+│ ❯ Send message to the agent                                                                │
 ╰────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
@@ -704,7 +704,7 @@ The box opens on the newest thing said, and holds only that. What came before is
 │ 3. The check fails on main too: it is not this task's change.                              │
 │ 4. I filed proj/7 for it and put an agent on it.                                           │
 │                                                                               alt+j more ↓ │
-│ ❯ Send message to the gtm coordinator                                                      │
+│ ❯ Send message to the project coordinator                                                  │
 ╰────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
@@ -723,7 +723,7 @@ The box opens on the newest thing said, and holds only that. What came before is
 
 ```
 ╭─  Jaco-Desktop  ─────────────────────────────────────────────────────────────────────────────────╮
-│ ❯ Send message to the gtm coordinator                                                      │
+│ ❯ Send message to the project coordinator                                                  │
 ╰────────────────────────────────────────────────────────────────────────────────────────────╯
   alt+c show the latest message · ? all keys
 ```
