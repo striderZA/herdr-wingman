@@ -148,7 +148,7 @@ fn checks_that_never_finish_wait_for_you_after_the_check_timeout() {
     poll_prs();
     let t = settle(&id);
     assert_eq!(t.s("stage"), "approval"); assert!(!t.b("autoMerge") && !t.b("checksWait")); assert!(!merged(&w));
-    assert_eq!(t.at("failure").s("title"), "GitHub's checks did not finish");
+    assert_eq!(t.at("failure").s("title"), "The pull request's checks did not finish");
     assert!(t.at("failure").s("detail").contains("after 10m (check.timeout): build"), "{}", t.at("failure"));
     assert_eq!(row(&id).s("state"), "blocked");
     // approved again it waits again, from the start
