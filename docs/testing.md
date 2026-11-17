@@ -39,10 +39,10 @@ passes.
    once, [below](#one-build-cache-for-every-worktree)). The release build, for the files people install, is another
    profile ([installing](install.md)).
 2. **Writes the made tables** when they are out of date (`herdr-wingman docs`): the keys in `docs/keys.md`, the settings
-   in `docs/settings.md`, and the map in your own folder. It says which it wrote: commit the tables.
+   in `docs/settings.md`, the agent programs in `docs/agents.md`, and the map in your own folder. It says which it wrote: commit the tables.
 3. **Checks the repo's own rules** (`herdr-wingman docs --guard`, which `tests/guard.rs` runs too): no source file past
    300 lines, every source file starts with a comment that says what it holds, a key's chord written only in
-   `crates/flow/src/board/keys.rs`, and no made table out of date.
+   `crates/flow/src/board/keys.rs` (and the text box's own table, `crates/board/src/board/textbox/keys.rs`), and no made table out of date.
 4. **Runs the tests**, with the names you gave, in several processes at once (`scripts/run-tests.sh`,
    [below](#several-processes-at-once)).
 
@@ -323,7 +323,7 @@ left a fake task (`probe/12`) on the human's board, because a variable it inheri
 its scratch `HERDR_WINGMAN_HOME`.
 
 **A real program is started only where the program itself is what is tested.** Those tests say so in their name
-(`real_programs_…`): the command line (`tests/cli.rs`), the real terminal (`tests/real_terminal.rs`) and the repo's own scripts (`tests/check_script.rs`, `tests/warm_start.rs`). They run the program cargo built for the tests, inside the test's world, with no Herdr to
+(`real_programs_…`), among them the command line (`tests/cli.rs`), the real terminal (`tests/real_terminal.rs`) and the repo's own scripts (`tests/check_script.rs`, `tests/warm_start.rs`). They run the program cargo built for the tests, inside the test's world, with no Herdr to
 reach. A repo's own `setup`, `check` and `teardown` commands are shell commands by nature, and run as such in the tests
 about them.
 

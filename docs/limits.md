@@ -143,6 +143,6 @@ These settings come from the research of task herdr-wingman/154.
   stop), `tick.rs` (the pass that looks), `shown.rs` (what is shown);
 - `crates/flow/src/actions/limits.rs`: continue, and as it is;
 - `crates/core/src/agents/read_tokens.rs`: one counter per program;
-- the token limit is checked at the end of a turn in `crates/flow/src/finish/turn_ended.rs` and
-  `crates/flow/src/finish/pipeline.rs`, and before anything merges by itself in `crates/flow/src/finish/auto_merge.rs`;
-- tests: `tests/limits.rs`, `tests/limits_more.rs`, `tests/limits_tokens.rs`.
+- the token limit is checked at the end of a turn in `crates/flow/src/finish/turn_ended.rs`,
+  `crates/flow/src/finish/pipeline_end.rs` and `crates/flow/src/finish/review.rs`, and before anything merges by itself in `crates/flow/src/finish/auto_merge.rs`;
+- tests: `tests/limits.rs`, `tests/limits_more.rs`, `tests/limits_tokens.rs`, `tests/limits_rest.rs`, `tests/limits_review.rs`.

@@ -21,7 +21,7 @@ means, is in [the list](#the-list) below.
 - **A coordinator's settings**: its program, model, effort, access and your words for it (`coordinator.`). They can be
   set for one coordinator, or for you (every coordinator). Setting one on a task or for a repo is refused.
 
-One setting is neither: `repo.key`, a fact about one repo.
+Two settings are neither: `repo.key` and `repo.cli`, facts about one repo.
 
 ## The rule
 
@@ -36,8 +36,8 @@ One setting is neither: `repo.key`, a fact about one repo.
      `{"coordinators": {"main": {…}, "projects": {"<repo>": {…}}}}`. `set`, `unset` and `show` take
      `--main-coordinator` or `--project-coordinator <repo>`.
    - None of them is ever read from a repo's own file, so code written by agents cannot change them.
-   - `coordinator.instructions` add up: yours, then the coordinator's own. A changed `coordinator.*` counts from its next
-     fresh chat.
+   - `coordinator.instructions` add up: yours, then the coordinator's own. A changed program, model, effort or access counts
+     from its next fresh chat; changed `coordinator.instructions` are heard on the next message, with one line that says so.
 4. **A setting is read when its step starts, and a step under way is never changed**: the agent's settings at its next
    start (whether the task is research only among them), the review's at the next review, the merge's right before the
    merge.
@@ -53,9 +53,10 @@ One setting is neither: `repo.key`, a fact about one repo.
 - **You**: `~/.herdr-wingman/settings/config.json` ([the home folder](home-folder.md)).
 - **Your entry for a repo**: the `repos` section of that same file, keyed by the repo's name on the board.
 - **This task**: saved on the task, only the settings that differ. A task an [automation](automations.md) made starts with
-  the automation's own settings here; an automation is not a place of its own.
+  the automation's own settings here; an automation is not a place of its own. A task sent from another machine carries
+  one more place after it: that machine's answers for you and its repo, worked out there.
 - **The repo's own file**: `.herdr-wingman.json`, committed in that repo. It may hold these facts only: `research.only`,
-  `chat.only`, `workspace.setup`, `workspace.include`, `workspace.teardown`, `check.command`, `check.again`, `check.timeout`, `merge.pushTimeout`, `merge.repo` and `repo.key`.
+  `chat.only`, `workspace.setup`, `workspace.include`, `workspace.teardown`, `check.command`, `check.again`, `check.timeout`, `merge.pushTimeout`, `merge.repo`, `repo.key` and `repo.cli`.
   - Anything else in it is refused, and said on the task (a `Note` in the task panel, and `show <id>`).
   - It is read from the commit the worktree started from. So code written by agents can never loosen a guard: it cannot
     switch on merging by itself, drop the review, or change the rules its own branch is checked by.

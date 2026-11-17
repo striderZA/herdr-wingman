@@ -107,8 +107,8 @@ usual ones.
 | `Reviewer` | who reviews, as `Agent`; `off` where nothing is reviewed, with what somebody chose for it all the same | `reviewer.*` |
 | `Review when` | `in a repo`, `always` or `never`, and whether the reviewer brings evidence | `review.when`, `review.evidence` |
 | `Send back` | how bad a finding sends the work back, and how many rounds go by themselves | `review.mustFix`, `review.rounds` |
-| `Check` | the check's command and how long it may run | `check.command`, `check.timeout` |
-| `Merge` | after your yes or by itself, how it lands, and whether a pull request is opened. A research-only task has `Research` here instead: it merges nothing. A [chat-only](chat.md) one has `Chat` (`no change to the repo · ends when you say`), and no `Reviewer`, `Review when`, `Send back` or `Check` rows: none of them runs | `merge.by`, `merge.method`, `merge.pr`, `research.only`, `chat.only` |
+| `Check` | the check's command and how long it may run, and whether the shorter check of a fix round runs (`check.again`) | `check.command`, `check.timeout`, `check.again` |
+| `Merge` | after your yes or by itself, how it lands, and whether a pull request is opened, where its checks are watched from and how long a push may wait, and whether it is kept in step with its branch (`merge.sync`). A research-only task has `Research` here instead: it merges nothing. A [chat-only](chat.md) one has `Chat` (`no change to the repo · ends when you say`), and no `Reviewer`, `Review when`, `Send back` or `Check` rows: none of them runs | `merge.by`, `merge.method`, `merge.pr`, `merge.checks`, `merge.pushTimeout`, `merge.sync`, `research.only`, `chat.only` |
 | `Limits` | the longest run and the most tokens, both of them (`2h a run · no token limit`); only where one is set, or somebody said `none` | `limit.time`, `limit.tokens` |
 | `Workspace` | what the worktree starts from, what sets it up, is copied in and tears it down, and whether it is removed when done | `workspace.*` |
 | `Also` | in a word each, what has no row of its own while it is nothing: `one attempt`, `not research only`, `no limits` | |
