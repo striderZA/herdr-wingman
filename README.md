@@ -8,7 +8,7 @@
 
 <p align="center"><a href="https://github.com/striderZA/herdr-wingman/blob/master/docs/get-started.md"><img src="assets/buttons/install-herdr-wingman.svg" alt="Install herdr-wingman" /></a></p>
 
-<p align="center"><sub>✓&nbsp;Free,&nbsp;MIT&nbsp;licensed &nbsp; ✓&nbsp;Runs&nbsp;on&nbsp;your&nbsp;machine,&nbsp;no&nbsp;hosted&nbsp;service &nbsp; ✓&nbsp;Linux&nbsp;and&nbsp;Windows,&nbsp;Herdr&nbsp;0.9.3+&nbsp;(0.9.4+&nbsp;on&nbsp;Windows)</sub></p>
+<p align="center"><sub>✓&nbsp;MIT&nbsp;licensed &nbsp; ✓&nbsp;Runs&nbsp;on&nbsp;your&nbsp;machine,&nbsp;no&nbsp;hosted&nbsp;service &nbsp; ✓&nbsp;Linux&nbsp;and&nbsp;Windows,&nbsp;Herdr&nbsp;0.9.3+&nbsp;(0.9.4+&nbsp;on&nbsp;Windows)</sub></p>
 
 ## What the board does
 
@@ -66,7 +66,6 @@ An open board and the keeper load the new program by themselves, once nothing is
 
 **Is that enough safety?** The guards are soft: nothing merges without your yes, a failed review can't be merged by a plain yes, and a repo's own file can't switch off the review. Agents still have a shell. Turn on `worker.access ask`, [a plan first](docs/plan.md) and [limits](docs/limits.md) for more.
 
-**What does it cost?** Nothing: Herdr Wingman is free and [MIT licensed](LICENSE). Your agent CLI's usage charges apply as usual, one session per task plus a review. `herdr-wingman doctor` checks the install, your agents and their access, and says what to do about each problem.
 
 ## Why this fork
 
